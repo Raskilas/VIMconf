@@ -4,6 +4,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'dart-lang/dart-vim-plugin'
 Plug 'udalov/kotlin-vim'
 "git wrapper
 "Plug 'tpope/vim-fugitive'
@@ -22,6 +23,18 @@ Plug 'udalov/kotlin-vim'
 " Open module, e.g. :Pyimport os (opens the os module)
 "Plug 'davidhalter/jedi-vim' "don't use because its too laggy
 "Mappings similiar to jedi-vim
+" Procedure to install all necessary utils:
+" At first install Node.js (alternatively in mac you can use 'brew install node').)
+" curl -sL install-node.now.sh | sh
+" :CocInstall coc-tsserver coc-json coc-html coc-css coc-pyright coc-flutter
+" For other supported extensions look at: https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions
+" :CocCommand 'SOME_COMMAND'
+" :CocList - to see all installed extensions
+" To find more python extensions/stubs/utils look at: https://github.com/typeddjango/awesome-python-typing#stub-packages
+" FlutterDevices:
+" :CocList FlutterDevices
+" FlutterEmulators:
+" :CocList FlutterEmulators
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " to move selection/line character with <C-k> (hjkl) buttons
 Plug 'matze/vim-move'
@@ -244,4 +257,3 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
-
