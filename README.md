@@ -49,9 +49,9 @@ My config file with some plugins.
 
 
 ### Plugin commands:
-- **\<Leader>\<Leader><navigation_key>** - [easymotion/vim-easymotion](https://github.com/easymotion/vim-easymotion), **<navigation_key>** is one of **jkwWbBeE**. Like **\\j** - will highlight lines below cursor with hotkey to move down quicker, much better than **23j**.
+- **\<Leader>\<Leader><navigation_key>** - [easymotion/vim-easymotion](https://github.com/easymotion/vim-easymotion), **<navigation_key>** is one of **jkwWbBeE**. Like **\\\j** - will highlight lines below cursor with hotkey to move down quicker, much better than **23j**.
 - **:Ag** - [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim), search in all files of current folder and subfolders. Open file with cursor on choosed line.
-- **Ctrl+n** - [scrooloose/nerdtree](https://github.com/preservim/nerdtree), opens current folder tree on left side of the screen. **t** - Open the selected file in a new tab, **i** - open the selected file in a horizontal split window, **s** - open the selected file in a vertical split window, **I** - toggle hidden files, **m** - show the NERD Tree menu ((**a**)dd/(**m**)ove/(**d**)elete/(**c**)opy node), **R** - refresh the tree, useful if files change outside of Vim, **?** - toggle NERD Tree's quick help.
+- **\<Ctrl>-n** - [scrooloose/nerdtree](https://github.com/preservim/nerdtree), opens current folder tree on left side of the screen. **t** - Open the selected file in a new tab, **i** - open the selected file in a horizontal split window, **s** - open the selected file in a vertical split window, **I** - toggle hidden files, **m** - show the NERD Tree menu ((**a**)dd/(**m**)ove/(**d**)elete/(**c**)opy node), **R** - refresh the tree, useful if files change outside of Vim, **?** - toggle NERD Tree's quick help.
 - **\<Leader>cc**,  **\<Leader>cu**,  **\<Leader>cs**,  **\<Leader>ci**,  **\<Leader>cy**,  **\<Leader>c\<Space>**  - [scrooloose/nerdcommenter](https://github.com/preservim/nerdcommenter), comment, uncomment, sexy comment (comments out the selected lines with a pretty block formatted layout), invert comment state, yank&comment and toggle comment respectively.
 - **\<F8>** - [majutsushi/tagbar](https://github.com/preservim/tagbar), opens right panel with file/class structure. (Need to check is [vista.vim](https://github.com/liuchengxu/vista.vim) is ready to replace it)
 
@@ -62,7 +62,7 @@ My config file with some plugins.
 - **"** - unnamed register, last delete or yank.
 - **%** - current file name.
 - **#** - alternate file name.
-- ***** - clipboard contents (X11 primary).
+- **\*** - clipboard contents (X11 primary).
 - **+** - clipboard contents (X11 clipboard).
 - **/** - last search pattern.
 - **:** - last command-line.
