@@ -4,7 +4,6 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'dart-lang/dart-vim-plugin'
 Plug 'udalov/kotlin-vim'
 "git wrapper
 "Plug 'tpope/vim-fugitive'
@@ -23,18 +22,6 @@ Plug 'udalov/kotlin-vim'
 " Open module, e.g. :Pyimport os (opens the os module)
 "Plug 'davidhalter/jedi-vim' "don't use because its too laggy
 "Mappings similiar to jedi-vim
-" Procedure to install all necessary utils:
-" At first install Node.js (alternatively in mac you can use 'brew install node').)
-" curl -sL install-node.now.sh | sh
-" :CocInstall coc-tsserver coc-json coc-html coc-css coc-pyright coc-flutter
-" For other supported extensions look at: https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions
-" :CocCommand 'SOME_COMMAND'
-" :CocList - to see all installed extensions
-" To find more python extensions/stubs/utils look at: https://github.com/typeddjango/awesome-python-typing#stub-packages
-" FlutterDevices:
-" :CocList FlutterDevices
-" FlutterEmulators:
-" :CocList FlutterEmulators
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " to move selection/line character with <C-k> (hjkl) buttons
 Plug 'matze/vim-move'
@@ -83,14 +70,22 @@ Plug 'junegunn/fzf.vim'
 "colorschemes
 Plug 'morhetz/gruvbox'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'doums/darcula'
 " Initialize plugin system
 call plug#end()
 
 syntax on
 "let g:mapleader=','
 "colorscheme dracula 
-colorscheme gruvbox
-let g:gruvbox_contrast_dark="medium"
+
+colorscheme darcula 
+
+"colorscheme gruvbox
+"let g:gruvbox_contrast_dark="medium"
+
+"in case if terminal support Truecolor
+set termguicolors
+
 "vim-move config to rule <C-k> hjkl
 let g:move_key_modifier = 'C'
 "set background=light
@@ -99,12 +94,24 @@ set number
 set expandtab
 set tabstop=4
 set hlsearch
+set mouse=a
+"set guifont=JetBrains\ Mono\ Regular:h14
+set guifont=DejaVu\ Sans\ Mono:h16
+"set linespace=1.2
 let mapleader="\\"
 filetype plugin on
 
 let g:pymode_python = 'python3'
 
 "mappings
+
+" system clipboard
+vnoremap <C-S-c> "+y
+nnoremap <C-S-v> "+p
+cnoremap <C-S-v> <C-r>+ 
+inoremap <C-S-v> <C-r>+ 
+" use <c-r> to insert original character without triggering things like auto-pairs
+inoremap <c-r> <c-v>
 
 map <C-n> :NERDTreeToggle<CR>
 ""move/swap line up
@@ -257,3 +264,13 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+" neovide configuration
+" 60fps is the most widely used
+let g:neovide_refresh_rate=60
+" we don't like transparency, are we?
+let g:neovide_transparency=1.0
+" game like full screen
+let g:neovide_fullscreen=v:false
+" antialiasing, need to disable if there appear cursor visual issues
+let g:neovide_cursor_antialiasing=v:true
