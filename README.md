@@ -92,23 +92,15 @@ My config file with some plugins.
 
 
 ### Save/edit commands
-**:w file.txt** - save current buffer in file **file.txt**.
-
-**:w! file.txt** - save and overwrite **file.txt** if it exist.
-
-**:e** - r**e**open current file.
-
-**:e file.txt** - **e**dit file **file.txt**.
-
-**:ene** - create/**e**dit **n**ew fil**e**.
-
-**:ene file.txt** - create/**e**dit **n**ew fil**e** **file.txt**.
-
-**:tabnew** - open new tab.
-
-**:tabnew file.txt** - open file in new tab.
-
-**:wqa** - **w**rite and **q**uit **a**ll.
+**:w file.txt** - save current buffer in file **file.txt**. 
+**:w! file.txt** - save and overwrite **file.txt** if it exist. 
+**:e** - r**e**open current file. 
+**:e file.txt** - **e**dit file **file.txt**. 
+**:ene** - create/**e**dit **n**ew fil**e**. 
+**:ene file.txt** - create/**e**dit **n**ew fil**e** **file.txt**. 
+**:tabnew** - open new tab. 
+**:tabnew file.txt** - open file in new tab. 
+**:wqa** - **w**rite and **q**uit **a**ll. 
 
 
 
@@ -129,11 +121,9 @@ My config file with some plugins.
 
 
 ### Run VIM params
-**vim -o filename1 filename2** - run VIM with two files opened in two horizontally splitted windows.
-
-**vim -O filename1 filename2** - run VIM with two files opened in two vertically splitted windows.
-
-**vim -d filename1 filename2** - run VIM with two files in comparison mode, it also highlight **d**ifferences between this files like in git prev/curr commit.
+**vim -o filename1 filename2** - run VIM with two files opened in two horizontally splitted windows. 
+**vim -O filename1 filename2** - run VIM with two files opened in two vertically splitted windows. 
+**vim -d filename1 filename2** - run VIM with two files in comparison mode, it also highlight **d**ifferences between this files like in git prev/curr commit. 
 
 
 
