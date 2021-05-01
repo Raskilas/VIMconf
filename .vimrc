@@ -90,14 +90,24 @@ set termguicolors
 let g:move_key_modifier = 'C'
 "set background=light
 set background=dark
+"show line numbers on left border
 set number
+"replace tabs with spaces
 set expandtab
+"tabulation simbols length
 set tabstop=4
+"HighLight search results
 set hlsearch
+"IncSearch - set incremental search
+"set is
+"Enables mouse in all modes, not really necessary
+"in terminal, but work good with UI client
 set mouse=a
+"WOWOW! JetBrains font, actually not very good (at least without linespace 1.2)
 "set guifont=JetBrains\ Mono\ Regular:h14
 set guifont=DejaVu\ Sans\ Mono:h16
 "set linespace=1.2
+"map leader key as \
 let mapleader="\\"
 filetype plugin on
 
