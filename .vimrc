@@ -22,6 +22,18 @@ Plug 'udalov/kotlin-vim'
 " Open module, e.g. :Pyimport os (opens the os module)
 "Plug 'davidhalter/jedi-vim' "don't use because its too laggy
 "Mappings similiar to jedi-vim
+" Procedure to install all necessary utils:
+" At first install Node.js (alternatively in mac you can use 'brew install node').)
+" curl -sL install-node.now.sh | sh
+" :CocInstall coc-tsserver coc-json coc-html coc-css coc-pyright coc-flutter
+" For other supported extensions look at: https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions
+" :CocCommand 'SOME_COMMAND'
+" :CocList - to see all installed extensions
+" To find more python extensions/stubs/utils look at: https://github.com/typeddjango/awesome-python-typing#stub-packages
+" FlutterDevices:
+" :CocList FlutterDevices
+" FlutterEmulators:
+" :CocList FlutterEmulators
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " to move selection/line character with <C-k> (hjkl) buttons
 Plug 'matze/vim-move'
@@ -42,7 +54,7 @@ Plug 'scrooloose/nerdcommenter'
 " Fuzzy search in buffer/files/tags
 "
 Plug 'ctrlpvim/ctrlp.vim'
-" Search everywhere ':Ag' 
+" Search text in files in current folder recursively ':Ag' 
 " default value './install --all' make FZF available in system
 " and './install --bin' make it available in vim only
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -77,11 +89,9 @@ call plug#end()
 syntax on
 "let g:mapleader=','
 "colorscheme dracula 
-
-colorscheme darcula 
-
 "colorscheme gruvbox
 "let g:gruvbox_contrast_dark="medium"
+colorscheme darcula 
 
 "in case if terminal support Truecolor
 set termguicolors
@@ -100,13 +110,6 @@ set tabstop=4
 set hlsearch
 "IncSearch - set incremental search
 "set is
-"Enables mouse in all modes, not really necessary
-"in terminal, but work good with UI client
-set mouse=a
-"WOWOW! JetBrains font, actually not very good (at least without linespace 1.2)
-"set guifont=JetBrains\ Mono\ Regular:h14
-set guifont=DejaVu\ Sans\ Mono:h16
-"set linespace=1.2
 "map leader key as \
 let mapleader="\\"
 filetype plugin on
@@ -116,12 +119,13 @@ let g:pymode_python = 'python3'
 "mappings
 
 " system clipboard
-vnoremap <C-S-c> "+y
-nnoremap <C-S-v> "+p
-cnoremap <C-S-v> <C-r>+ 
-inoremap <C-S-v> <C-r>+ 
-" use <c-r> to insert original character without triggering things like auto-pairs
-inoremap <c-r> <c-v>
+"%$(@%&#*^@!! VIM cannot distinguish <C-S-v> and <C-v> WHY DID YOU DO THAT!?
+"vnoremap <C-S-c> "+y
+""nnoremap <C-S-v> "+p
+"cnoremap <C-S-v> <C-r>+ 
+"inoremap <C-S-v> <C-r>+ 
+"" use <c-r> to insert original character without triggering things like auto-pairs
+"inoremap <c-r> <c-v>
 
 map <C-n> :NERDTreeToggle<CR>
 ""move/swap line up
@@ -284,3 +288,4 @@ let g:neovide_transparency=1.0
 let g:neovide_fullscreen=v:false
 " antialiasing, need to disable if there appear cursor visual issues
 let g:neovide_cursor_antialiasing=v:true
+
