@@ -41,7 +41,7 @@ My config file with some plugins.
 - **ciw** - remove whole current word no matter on which character cursor point and enable Insert mode. **C**hange **I**nside **W**ord.
 - **C** - remove text in the line from cursor to the end of the line and enable Insert mode.
 - **dt\<char>** — remove text from cursor to first appearance of character. **D**elete **T**o **\<character>**.
-- **~** - switch case (upper to bottom and otherwise). Work in Visual mode too.
+- **~** - switch character case (upper to bottom and otherwise). Work in Visual mode too.
 - **gU**, **gu** - switch **U**pper and **u/b**ottom case respectively.
 - **.** - repeat the last Vim command.
 - **ggVG=** - autoformat text in whole file. **gg** - go to the top of file, **V** - Visual Line mode, **G** - go to the bottom of file, **=** - autoformat.
@@ -49,6 +49,9 @@ My config file with some plugins.
 - **/foo\<Enter>cgnbar\<Esc>** then **n.** - quick search of **foo** and replace with **bar**. **n** - **n**ext search appearance, **.** - insert previously typed **bar**.
 - **\*cwbar\<Esc>** then **n.** - quick search variation of previous commands, but in this case we assume that cursor is already point to the start of word to be replaced.
 - **:%s/\<foo\>/bar/gcI** - case sensitive find **foo** and replace with **bar** with confirmation. **%** - in all lines, **\\<** and **\\>** - only whole word exactly matching **foo**, **bar** - replace with that word, **g** - **g**lobal for line (all appearance, not only first), **c** - **C**onfirmation, ask for confirmation on every appearance (y/n/a/q/l/^E/^Y - **y**es/**n**o/**a**ll/**q**uit/change **l**ast one and quit/scroll screen up/scroll screen down), **I** - case sensitive - opposite to **i** - case **i**nsensitive. **%** can be replaced with range of line numbers **:5,12s/foo/bar/g** (from 5 to 12 inclusive), with marks **:'a,'bs/foo/bar/g** (from **a**-mark to **b**-mark), with offset **:.,+2s/foo/bar/g** (from **.** - current line to **+2** lines below) or **:.,$s/foo/bar/g** (from current line to the **$** - end of file).
+- **:%s/^/foo/g** - add **foo** to the START of all lines.
+- **:%s/$/foo/g** - add **foo** to the END of all lines.
+- **:%s/.\{6}$/g** - remove **6** characters from the END of all lines.
 - **:noh** - **no h**ighlight/disable search results.
 - **\<Ctrl>-o** - go back to the place where we've started search.
 - **:g/some_text/d** - delete all lines which contain **some_text**.
@@ -65,17 +68,23 @@ My config file with some plugins.
 ### Windows control
 - **\<Ctrl>-w** **v** - (:vsplit) split vertically.
 - **\<Ctrl>-w** **s** - (:split) split horizontally.
+- **:vsp term://bash**  - open bash terminal in vertical split.
+- **:term zsh**  - open zsh terminal.
+- **:term**  - open default terminal.
+- **:terminal**  - open default terminal.
+- **\<Ctrl>-\\** **\<Ctrl>-n** - switch from terminal to normal mode.
 - **\<Ctrl>-w** **f** - split window and open file with the path to it under cursor.
 - **\<Ctrl>-w** **q**/**c** - close current window.
 - **\<Ctrl>-w** **n** - create new window (:new filename).
-
 - **\<Сtrl>-w** **o** - make current window in fullscreen and close other windows.
+- **:tabonly** - make current window in fullscreen and close other windows.
 - **\<Сtrl>-w** **_** - make current window in fullscreen.
 - **\<Сtrl>-w** **=** - make all windows in current tab **equal** size.
 - **\<Ctrl>-w** **+**/**-** - increase/decrease current window
-- **Esc** **5** **\<Ctrl>-w** **+** or **\<Сtrl>-w** **5+** - increase current window by 5 rows/columns.
-- **Esc** **5** **\<Ctrl>-w** **-** or **\<Сtrl>-w** **5-** - decrease current window by 5 rows/columns.
-
+- **Esc** **5** **\<Ctrl>-w** **+** or **\<Сtrl>-w** **5+** - increase current window by 5 rows.
+- **Esc** **5** **\<Ctrl>-w** **-** or **\<Сtrl>-w** **5-** - decrease current window by 5 rows.
+- **Esc** **5** **\<Ctrl>-w** **>** or **\<Сtrl>-w** **5>** - increase current window by 5 columns.
+- **Esc** **5** **\<Ctrl>-w** **\<** or **\<Сtrl>-w** **5\<** - decrease current window by 5 columns.
 - **\<Ctrl>-w** **\<Ctrl>-w** - go to the next window.
 - **\<Ctrl>-w** **H**/**J**/**K**/**L** - move window Left/Down/Top/Right.
 - **\<Ctrl>-w** **h**/**j**/**k**/**l** - move cursor in Left/Down/Top/Right window.
