@@ -1,0 +1,9 @@
+{
+    "python.jediEnabled": false,
+    "python.linting.enabled": false,
+    "python.pythonPath": "/usr/bin/python3",
+
+    "java.enabled": true,
+    "java.signatureHelp.enabled": true,
+    "java.format.enabled": true
+}

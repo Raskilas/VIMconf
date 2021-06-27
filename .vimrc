@@ -52,14 +52,16 @@ Plug 'vim-airline/vim-airline'
 " (if first line commented then whole block will uncomment and otherwise)
 Plug 'scrooloose/nerdcommenter'
 " Fuzzy search in buffer/files/tags
-"
-Plug 'ctrlpvim/ctrlp.vim'
+" Disable 'cause fzf is better
+"Plug 'ctrlpvim/ctrlp.vim'
 " Search text in files in current folder recursively ':Ag' 
 " default value './install --all' make FZF available in system
 " and './install --bin' make it available in vim only
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 "Plug '~/.fzf'
+"Changes the working directory to the project root when you open a file or directory
+"Plug 'airblade/vim-rooter'
 "deoplete code completion
 "if has('nvim')
   "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -77,7 +79,11 @@ Plug 'junegunn/fzf.vim'
 " or Ctrl-o Ctrl-w (mnemonics is set Option: Regex, case Sesnsitive, 
 " Word regex).
 "Plugin 'eugen0329/vim-esearch'
-
+" Syntax highlight NOT better than vim's default
+"Plug 'sheerun/vim-polyglot'
+"Syntax highlight - color each variable to different color
+Plug 'jaxbot/semantic-highlight.vim'
+Plug 'vim-jp/vim-java'
 
 "colorschemes
 Plug 'morhetz/gruvbox'
@@ -95,6 +101,26 @@ colorscheme darcula
 
 "in case if terminal support Truecolor
 set termguicolors
+
+"FZF files search map
+nnoremap <C-p><C-w> :call fzf#vim#files('.', {'options':'--query '.expand('<cword>')})<CR>
+
+"Semantic-highlight toogle
+:nnoremap <Leader>s :SemanticHighlightToggle<cr>
+
+"let java_highlight_functions = 1
+"let java_highlight_all = 1
+highlight link javaScopeDecl Statement
+highlight link javaType Type
+highlight link javaDocTags PreProc
+
+"Methods call syntax highlight
+"autocmd! FileType c,cpp,java,php call CSyntaxAfter()
+
+"tabs shortcuts, use ":tn<Space>" == tabnew
+ca tn tabnew
+ca th tabp
+ca tl tabn
 
 "vim-move config to rule <C-k> hjkl
 let g:move_key_modifier = 'C'
