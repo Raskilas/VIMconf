@@ -88,6 +88,8 @@ My config file with some plugins.
 - **\<Ctrl>-w** **\<Ctrl>-w** - go to the next window.
 - **\<Ctrl>-w** **H**/**J**/**K**/**L** - move window Left/Down/Top/Right.
 - **\<Ctrl>-w** **h**/**j**/**k**/**l** - move cursor in Left/Down/Top/Right window.
+- **:mks session_name.vim** - make session file with all opened files and tabs.
+- **:source session_name.vim** - read/open session file with all opened files and tabs.
 
 
 
